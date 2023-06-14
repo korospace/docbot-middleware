@@ -1,0 +1,118 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api SD AL-MADINAH",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/vi/login/{privilege}": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Login for admin and student",
+                "description": "",
+                "operationId": "loginUser",
+                "parameters": [
+                    {
+                        "name": "privilege",
+                        "in": "path",
+                        "description": "available privilege [admin,student]",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "username": {
+                                        "description": "",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "description": "id user",
+                                            "type": "integer",
+                                            "default": "1"
+                                        },
+                                        "privilege": {
+                                            "description": "user privilege",
+                                            "type": "string",
+                                            "default": "admin"
+                                        },
+                                        "expired": {
+                                            "description": "token expired",
+                                            "type": "integer",
+                                            "default": "1671090461"
+                                        },
+                                        "token": {
+                                            "description": "token",
+                                            "type": "string",
+                                            "default": "20d338931e8d6bd9466edeba78ea7dce7c7bc01aa5cc5b4735691c50a2fe3228"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "description": "error message",
+                                            "type": "string",
+                                            "default": "username atau password salah"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "password": {
+                                            "description": "error message",
+                                            "type": "string",
+                                            "default": "['password harus disi']"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
