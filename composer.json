@@ -7,22 +7,9 @@
     "require": {
         "php": "^8.0",
         "anik/form-request": "^4.5",
-<<<<<<< HEAD
         "flipbox/lumen-generator": "^9.1",
         "guzzlehttp/guzzle": "^7.7",
         "laravel/lumen-framework": "^9.0"
-=======
-        "barryvdh/laravel-dompdf": "^2.0",
-        "firebase/php-jwt": "^6.3",
-        "flipbox/lumen-generator": "^9.1",
-        "guzzlehttp/guzzle": "^7.0",
-        "laravel/lumen-framework": "^9.0",
-        "maatwebsite/excel": "^3.1",
-        "mpdf/mpdf": "^8.1",
-        "shuchkin/simplecsv": "^0.1.1",
-        "shuchkin/simplexls": "^0.10.3",
-        "shuchkin/simplexlsx": "^1.0"
->>>>>>> a424c8d2a90894880566cc109a51bbc248a27e87
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
