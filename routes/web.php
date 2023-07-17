@@ -21,4 +21,3 @@ $router->group(['prefix' => ''], function () use ($router) {
     $router->get('',        ['uses' => 'ApiMiddleware@flexibleMethodGet']);
     $router->post('',       ['uses' => 'ApiMiddleware@flexibleMethodPost']);
 });
-
